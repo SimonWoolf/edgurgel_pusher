@@ -1,4 +1,4 @@
-defmodule Pusher.Mixfile do
+defmodule EdgurgelPusher.Mixfile do
   use Mix.Project
 
   @description """
@@ -6,10 +6,10 @@ defmodule Pusher.Mixfile do
   """
 
   def project do
-    [ app: :pusher,
+    [ app: :edgurgel_pusher,
       version: "0.1.3",
       elixir: "~> 1.0",
-      name: "Pusher",
+      name: "Pusher REST lib",
       description: @description,
       package: package,
       source_url: "https://github.com/edgurgel/pusher",

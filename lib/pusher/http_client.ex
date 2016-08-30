@@ -1,12 +1,12 @@
-defmodule Pusher.HttpClient do
+defmodule EdgurgelPusher.HttpClient do
   use HTTPoison.Base
-  alias Pusher.RequestSigner
+  alias EdgurgelPusher.RequestSigner
 
   defp process_url(url), do: base_url <> url
 
   defp base_url do
-    {:ok, host} = :application.get_env(:pusher, :host)
-    {:ok, port} = :application.get_env(:pusher, :port)
+    {:ok, host} = :application.get_env(:edgurgel_pusher, :host)
+    {:ok, port} = :application.get_env(:edgurgel_pusher, :port)
     "#{host}:#{port}"
   end
 
@@ -26,12 +26,12 @@ defmodule Pusher.HttpClient do
   end
 
   defp secret do
-    {:ok, secret} = :application.get_env(:pusher, :secret)
+    {:ok, secret} = :application.get_env(:edgurgel_pusher, :secret)
     secret
   end
 
   defp app_key do
-    {:ok, app_key} = :application.get_env(:pusher, :app_key)
+    {:ok, app_key} = :application.get_env(:edgurgel_pusher, :app_key)
     app_key
   end
 

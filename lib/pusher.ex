@@ -1,5 +1,5 @@
-defmodule Pusher do
-  alias Pusher.HttpClient
+defmodule EdgurgelPusher do
+  alias EdgurgelPusher.HttpClient
 
   @doc """
   Trigger a simple `event` on `channels` sending some `data`
@@ -63,11 +63,11 @@ defmodule Pusher do
   end
 
   def configure!(host, port, app_id, app_key, secret) do
-    :application.set_env(:pusher, :host, host)
-    :application.set_env(:pusher, :port, port)
-    :application.set_env(:pusher, :app_id, app_id)
-    :application.set_env(:pusher, :app_key, app_key)
-    :application.set_env(:pusher, :secret, secret)
+    :application.set_env(:edgurgel_pusher, :host, host)
+    :application.set_env(:edgurgel_pusher, :port, port)
+    :application.set_env(:edgurgel_pusher, :app_id, app_id)
+    :application.set_env(:edgurgel_pusher, :app_key, app_key)
+    :application.set_env(:edgurgel_pusher, :secret, secret)
   end
 
   defp channel_list(channels) when is_list(channels), do: channels
@@ -77,7 +77,7 @@ defmodule Pusher do
   defp encoded_data(data), do: JSX.encode!(data)
 
   defp app_id do
-    {:ok, app_id} = :application.get_env(:pusher, :app_id)
+    {:ok, app_id} = :application.get_env(:edgurgel_pusher, :app_id)
     app_id
   end
 

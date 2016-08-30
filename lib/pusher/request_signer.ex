@@ -1,4 +1,4 @@
-defmodule Pusher.RequestSigner do
+defmodule EdgurgelPusher.RequestSigner do
   alias Signaturex.CryptoHelper
 
   def sign_query_string(qs_vals, body, app_key, secret, method, path) do

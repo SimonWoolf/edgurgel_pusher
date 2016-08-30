@@ -1,6 +1,6 @@
-defmodule Pusher.RequestSignerTest do
+defmodule EdgurgelPusher.RequestSignerTest do
   use ExUnit.Case
-  import Pusher.RequestSigner
+  import EdgurgelPusher.RequestSigner
   import Mock
 
   @frozen_time 1353088179
